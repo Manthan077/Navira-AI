@@ -1,13 +1,17 @@
-# 🚑 MediRoute AI – Smart Ambulance Navigation System
+# 🚑 Navira AI – Smart Ambulance Navigation System
 
 > ⏱ Every 1 minute of delay in emergency response reduces survival probability by **7-10%**.  
-> **MediRoute AI** minimizes delays by automating routing, traffic control, and hospital coordination in real time.
+> **Navira AI** minimizes delays by automating routing, traffic control, and hospital coordination in real time.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3b427c8 (fix: Update README to reflect project name change from MediRoute AI to Navira AI)
 ---
 
 ## 🧠 Overview
 
-**MediRoute AI** is a real-time, city-scale emergency mobility platform that coordinates:
+**Navira AI** is a real-time, city-scale emergency mobility platform that coordinates:
 
 - 🚑 **Ambulances**
 - 🏥 **Hospitals** 
@@ -38,7 +42,7 @@ to create **automated green corridors**, dynamically assign **optimal hospitals*
 - **AdminServer**: Authentication & verification
 - **Ambulance**: Real-time GPS tracking & response
 - **Hospital**: Emergency management & coordination
-- **MediRouteAI Core**: Route optimization & traffic control
+- **NaviraAI Core**: Route optimization & traffic control
 - **MapEngine**: Route calculation & navigation
 - **TrafficControl**: Automated signal management
 - **TrafficSignals**: Physical infrastructure integration
@@ -47,7 +51,7 @@ to create **automated green corridors**, dynamically assign **optimal hospitals*
 
 ## 🏗️ Basic System Logical Data Flow Diagram
 
-MediRoute AI follows a centrally controlled, hospital‑approved emergency mobility workflow.
+Navira AI follows a centrally controlled, hospital‑approved emergency mobility workflow.
 
 <img width="848" height="508" alt="image" src="https://github.com/user-attachments/assets/fe24d192-eca2-4fc5-b95d-8050e2c47527" />
 
@@ -56,7 +60,7 @@ MediRoute AI follows a centrally controlled, hospital‑approved emergency mobil
 |-----|-------|
 | Patient / Emergency Caller | Calls hospital emergency |
 | Hospital Control Staff| Creates emergency request |
-| Ambulance Driver | Can directly create emergency via MediRoute App |
+| Ambulance Driver | Can directly create emergency via Navira App |
 | City Admin | Can initiate or monitor emergencies |
 
 ---
@@ -72,7 +76,7 @@ MediRoute AI follows a centrally controlled, hospital‑approved emergency mobil
 ### 🧠 Core Decision Layer
 | Engine | Function |
 |------|--------|
-| MediRoute Core System | Central brain coordinating all operations |
+| Navira Core System | Central brain coordinating all operations |
 | Hospital Control Unit | Selects best hospital based on ICU, beds, load |
 | Route Engine | Calculates fastest traffic‑aware route |
 | Map Engine | Provides navigation & road data |
@@ -83,7 +87,7 @@ MediRoute AI follows a centrally controlled, hospital‑approved emergency mobil
 ### ⚙️ Execution Layer
 | Component | Action |
 |---------|------|
-| MediRoute App | Displays live route, ETA, MediBot instructions |
+| Navira App | Displays live route, ETA, MediBot instructions |
 | Traffic Signal Controller | Activates green corridor |
 | City Traffic Signals | Turn green automatically for ambulance |
 
@@ -101,7 +105,7 @@ MediRoute AI follows a centrally controlled, hospital‑approved emergency mobil
 ### 🔁 End‑to‑End Flow Summary
 1. Emergency is raised by Patient / Driver / Admin  
 2. Hospital Control Unit verifies and approves  
-3. MediRoute Core processes the emergency  
+3. Navira Core processes the emergency  
 4. Best hospital is selected automatically  
 5. Fastest route is calculated  
 6. Green corridor is activated  
@@ -157,7 +161,7 @@ MediRoute AI follows a centrally controlled, hospital‑approved emergency mobil
 
 ## 🤖 MediBot
 
-**AI-powered emergency nurse** integrated into MediRoute AI.
+**AI-powered emergency nurse** integrated into Navira AI.
 
 **Capabilities:**
 - Step-by-step life-saving instructions
@@ -237,8 +241,8 @@ MediRoute AI follows a centrally controlled, hospital‑approved emergency mobil
 
 1. **Clone repository**
    ```bash
-   git clone https://github.com/puneetkumargarg/mediroute-ai.git
-   cd mediroute-ai
+   git clone https://github.com/puneetkumargarg/navira-ai.git
+   cd navira-ai
    ```
 
 2. **Install dependencies**
@@ -370,7 +374,7 @@ The system follows an intelligent emergency response process:
 - System identifies nearest available ambulance
 
 ### Phase 2: Route Optimization
-- MediRoute AI calculates optimal route using real-time traffic data
+- Navira AI calculates optimal route using real-time traffic data
 - Multiple route options generated considering:
   - Current traffic conditions
   - Road closures and construction
@@ -396,7 +400,7 @@ The system follows an intelligent emergency response process:
 
 ## 🚀 Scalability & Fault Tolerance
 
-MediRoute AI is designed as a **cloud‑native, city‑grade emergency mobility platform** that can safely grow across cities while avoiding system failures.
+Navira AI is designed as a **cloud‑native, city‑grade emergency mobility platform** that can safely grow across cities while avoiding system failures.
 
 ---
 
@@ -419,7 +423,7 @@ Supports **1000+ ambulances streaming every 2 seconds**.
 ---
 
 #### 3️⃣ Stateless Core Services
-MediRoute Core services are stateless:
+Navira Core services are stateless:
 - Any request can go to any server instance  
 - Vercel auto‑scales horizontally  
 - No single server becomes a bottleneck
@@ -483,7 +487,7 @@ This ensures a human safety layer above AI.
 - Emergency states auto‑restored  
 - Zero data loss guarantee
 
-> **MediRoute AI uses cloud auto‑scaling, realtime replication, stateless services, and human override layers to ensure zero downtime emergency operations across cities.**
+> **Navira AI uses cloud auto‑scaling, realtime replication, stateless services, and human override layers to ensure zero downtime emergency operations across cities.**
 
 ---
 
@@ -508,4 +512,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**MediRoute AI** - Saving lives through smart technology 🚑
+**Navira AI** - Saving lives through smart technology 🚑
