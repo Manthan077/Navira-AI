@@ -52,7 +52,7 @@ to create **automated green corridors**, dynamically assign **optimal hospitals*
 
 1. **Clone repository**
    ```bash
-   git clone https://github.com/puneetkumargarg/navira-ai.git
+   git clone https://github.com/Code-Fatherz/Navira-AI.git
    cd navira-ai
    ```
 
