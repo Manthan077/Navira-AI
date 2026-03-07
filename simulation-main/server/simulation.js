@@ -1,5 +1,5 @@
 // ============================================================
-// MediRoot AI - Simulation Engine v2.1
+// Navira AI - Simulation Engine v2.1
 // Chandigarh City Map, 10 Ambulances, 8 Hospitals
 // 4-way Traffic Lights at Actual Intersections
 // Colored Road Segments reflecting traffic density

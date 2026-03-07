@@ -1,7 +1,7 @@
 {
-  "name": "mediroot-server",
+  "name": "Navira-server",
   "version": "1.0.0",
-  "description": "MediRoot AI Backend Server",
+  "description": "Navira AI Backend Server",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

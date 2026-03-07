@@ -31,7 +31,7 @@ export default function Dashboard({ state, metrics, routes, isConnected, onCreat
       <div className="flex items-center gap-3 pb-3 border-b border-white/10">
         <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center text-lg shadow-lg">🚑</div>
         <div>
-          <h1 className="text-lg font-bold text-white tracking-tight">MediRoot AI</h1>
+          <h1 className="text-lg font-bold text-white tracking-tight">Navira AI</h1>
           <p className="text-[11px] text-white/40 font-medium tracking-wider uppercase">Smart Emergency Management</p>
         </div>
       </div>
@@ -178,7 +178,7 @@ export default function Dashboard({ state, metrics, routes, isConnected, onCreat
       </div>
 
       <div className="mt-auto pt-2 border-t border-white/5">
-        <p className="text-[10px] text-white/20 text-center">MediRoot AI v2.0 • Hackathon Prototype</p>
+        <p className="text-[10px] text-white/20 text-center">Navira AI v2.0 • Hackathon Prototype</p>
       </div>
     </div>
   );

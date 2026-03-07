@@ -1,5 +1,5 @@
 // ============================================================
-// MediRoot AI - Backend Server
+// Navira AI - Backend Server
 // Express + WebSocket for real-time emergency management
 // ============================================================
 
@@ -87,7 +87,7 @@ const PORT = 4000;
 server.listen(PORT, () => {
   console.log(`
   ╔══════════════════════════════════════════╗
-  ║   🚑 MediRoot AI Server Running         ║
+  ║   🚑 Navira AI Server Running         ║
   ║   Port: ${PORT}                             ║
   ║   API:  http://localhost:${PORT}/api        ║
   ║   WS:   ws://localhost:${PORT}              ║
