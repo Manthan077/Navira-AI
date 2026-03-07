@@ -1,4 +1,4 @@
-import logoImage from "@/assets/mediroute-logo.png";
+import logoImage from "@/assets/navira-logo.png";
 
 interface LogoProps {
   size?: "sm" | "md" | "lg";
@@ -23,12 +23,12 @@ export const Logo = ({ size = "md", showText = true, className = "" }: LogoProps
     <div className={`flex items-center gap-2 ${className}`}>
       <img 
         src={logoImage} 
-        alt="MediRoute AI Logo" 
+        alt="Navira AI Logo" 
         className={`${sizeClasses[size]} object-contain`}
       />
       {showText && (
         <span className={`font-bold text-foreground ${textSizeClasses[size]}`}>
-          MediRoute AI
+          Navira AI
         </span>
       )}
     </div>
