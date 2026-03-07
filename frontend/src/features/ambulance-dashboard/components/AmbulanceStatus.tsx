@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { MapPin } from 'lucide-react';
 import { Ambulance } from '../types';
 import { toast } from 'sonner';
+import { SimulationModal } from '@/components/SimulationModal';
 
 interface AmbulanceStatusProps {
   ambulance: Ambulance | null;
@@ -20,6 +21,7 @@ export const AmbulanceStatus: React.FC<AmbulanceStatusProps> = ({
   onStopSimulation,
   onUpdateLocation
 }) => {
+  const [showSimulation, setShowSimulation] = useState(false);
   const handleShareLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -73,11 +75,11 @@ export const AmbulanceStatus: React.FC<AmbulanceStatusProps> = ({
         <div className="flex gap-2">
           <Button
             size="sm"
-            variant={isSimulating ? 'destructive' : 'outline'}
-            onClick={isSimulating ? onStopSimulation : onStartSimulation}
+            variant="default"
+            onClick={() => setShowSimulation(true)}
             className="text-xs sm:text-sm"
           >
-            {isSimulating ? 'Stop Simulation' : 'Simulate Movement'}
+            🚦 Traffic Simulation
           </Button>
           <Button
             size="sm"
@@ -88,6 +90,8 @@ export const AmbulanceStatus: React.FC<AmbulanceStatusProps> = ({
             📍 Share Location
           </Button>
         </div>
+        
+        <SimulationModal open={showSimulation} onClose={() => setShowSimulation(false)} />
       </CardContent>
     </Card>
   );
