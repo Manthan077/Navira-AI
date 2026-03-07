@@ -306,7 +306,7 @@ export function useEmergencyTokens() {
   ): Promise<EmergencyToken | null> => {
     if (!isHospitalUser) {
       console.error('Only hospital users can create hospital emergencies');
-      return null;
+      throw new Error('Only hospital users can create hospital emergencies');
     }
 
     try {
@@ -317,11 +317,15 @@ export function useEmergencyTokens() {
         .eq('ambulance_id', ambulanceId)
         .in('status', ['pending', 'assigned', 'route_selected', 'in_progress', 'at_patient', 'to_hospital']);
       
-      if (checkError) throw checkError;
+      if (checkError) {
+        console.error('Error checking existing tokens:', checkError);
+        throw checkError;
+      }
       
       if (existingTokens && existingTokens.length > 0) {
-        console.error('Ambulance already has an active emergency token:', existingTokens[0].token_code);
-        return null;
+        const errorMsg = `Ambulance already has an active emergency: ${existingTokens[0].token_code}`;
+        console.error(errorMsg);
+        throw new Error(errorMsg);
       }
 
       const isUuid = (value: string) =>
@@ -355,9 +359,21 @@ export function useEmergencyTokens() {
         assigned_at: new Date().toISOString()
       };
 
-      // Add emergency type fields if provided
-      if (emergencyType) insertData.emergency_type = emergencyType;
-      if (medicalKeyword) insertData.medical_keyword = medicalKeyword;
+      // Add emergency type fields if provided (optional - for backwards compatibility)
+      if (emergencyType) {
+        try {
+          insertData.emergency_type = emergencyType;
+        } catch (e) {
+          console.warn('emergency_type column not available:', e);
+        }
+      }
+      if (medicalKeyword) {
+        try {
+          insertData.medical_keyword = medicalKeyword;
+        } catch (e) {
+          console.warn('medical_keyword column not available:', e);
+        }
+      }
 
       const { data, error } = await supabase
         .from('emergency_tokens')
@@ -365,16 +381,26 @@ export function useEmergencyTokens() {
         .select()
         .single();
 
-      if (error) throw error;
+      if (error) {
+        console.error('Error inserting emergency token:', error);
+        throw error;
+      }
 
       // Update ambulance with active token
-      await supabase
+      const { error: ambError } = await supabase
         .from('ambulances')
         .update({ 
           active_token_id: data.id,
           emergency_status: 'active'
         })
         .eq('id', ambulanceId);
+
+      if (ambError) {
+        console.error('Error updating ambulance:', ambError);
+        // Rollback: delete the token we just created
+        await supabase.from('emergency_tokens').delete().eq('id', data.id);
+        throw ambError;
+      }
 
       const typedToken = {
         ...data,
@@ -387,7 +413,7 @@ export function useEmergencyTokens() {
       return typedToken;
     } catch (error) {
       console.error('Error creating hospital emergency:', error);
-      return null;
+      throw error;
     }
   };
 

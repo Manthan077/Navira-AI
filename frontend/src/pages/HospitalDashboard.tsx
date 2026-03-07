@@ -262,30 +262,35 @@ export default function HospitalDashboard() {
       return;
     }
 
-    const token = await createHospitalEmergency(
-      ambulance.id,
-      ambulance.current_lat,
-      ambulance.current_lng,
-      pickupLat,
-      pickupLng,
-      pickupAddress,
-      user.id,
-      hospital.organization_name,
-      hospital.location_lat,
-      hospital.location_lng,
-      routeToPatient,
-      routeToHospital,
-      emergencyType || 'General Emergency',
-      medicalKeyword || 'General'
-    );
+    try {
+      const token = await createHospitalEmergency(
+        ambulance.id,
+        ambulance.current_lat,
+        ambulance.current_lng,
+        pickupLat,
+        pickupLng,
+        pickupAddress,
+        user.id,
+        hospital.organization_name,
+        hospital.location_lat,
+        hospital.location_lng,
+        routeToPatient,
+        routeToHospital,
+        emergencyType || 'General Emergency',
+        medicalKeyword || 'General'
+      );
 
-    if (token) {
-      toast.success(`${emergencyType || 'Emergency'} Created: ${token.token_code}`, {
-        description: `${ambulance.vehicle_number} dispatched to ${medicalKeyword || 'General'} emergency → ${hospital.organization_name}`
+      if (token) {
+        toast.success(`${emergencyType || 'Emergency'} Created: ${token.token_code}`, {
+          description: `${ambulance.vehicle_number} dispatched to ${medicalKeyword || 'General'} emergency → ${hospital.organization_name}`
+        });
+        setActiveNav('dashboard');
+      }
+    } catch (error: any) {
+      console.error('Emergency creation error:', error);
+      toast.error('Failed to create emergency', {
+        description: error.message || 'Please try again or select a different ambulance'
       });
-      setActiveNav('dashboard');
-    } else {
-      toast.error('Failed to create emergency');
     }
   };
 
