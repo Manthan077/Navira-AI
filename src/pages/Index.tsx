@@ -86,8 +86,10 @@ export default function Index() {
     return (
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-16">
-          <nav className="flex justify-between items-center mb-16">
-            <Logo size="lg" />
+          <nav className="flex justify-between items-center mb-16 -mt-8">
+            <div className="mt-12">
+              <Logo size="lg" />
+            </div>
             <Link to="/auth">
               <Button className="font-semibold">Sign In</Button>
             </Link>

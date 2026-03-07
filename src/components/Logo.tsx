@@ -7,9 +7,9 @@ interface LogoProps {
 }
 
 const sizeClasses = {
-  sm: "w-6 h-6",
-  md: "w-8 h-8",
-  lg: "w-12 h-12",
+  sm: "w-12 h-12",
+  md: "w-16 h-16",
+  lg: "w-24 h-24",
 };
 
 const textSizeClasses = {
@@ -20,7 +20,7 @@ const textSizeClasses = {
 
 export const Logo = ({ size = "md", showText = true, className = "" }: LogoProps) => {
   return (
-    <div className={`flex items-center gap-2 ${className}`}>
+    <div className={`flex items-center gap-2 -mt-16 ${className}`}>
       <img 
         src={logoImage} 
         alt="Navira AI Logo" 
