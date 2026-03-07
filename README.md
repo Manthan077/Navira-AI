@@ -3,9 +3,6 @@
 > ⏱ Every 1 minute of delay in emergency response reduces survival probability by **7-10%**.  
 > **MediRoute AI** minimizes delays by automating routing, traffic control, and hospital coordination in real time.
 
-## 🌐 Live Demo
-👉 [Live Website](https://medirouteai.vercel.app)
-
 ---
 
 ## 🧠 Overview
