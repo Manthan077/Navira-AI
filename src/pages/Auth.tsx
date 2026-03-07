@@ -68,47 +68,47 @@ export default function Auth() {
           </CardHeader>
 
           {/* 🔑 DEMO CREDENTIALS BOX */}
-          <div className="mx-4 mb-3 p-3 rounded-lg bg-slate-700/40 border border-slate-600">
-            <div className="flex items-center gap-2 text-slate-200 mb-2">
-              <KeyRound className="w-4 h-4" />
-              <span className="font-medium">Demo Credentials</span>
+          <div className="mx-4 mb-4 p-4 rounded-xl bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-blue-500/30 shadow-lg">
+            <div className="flex items-center justify-center gap-2 text-blue-200 mb-3">
+              <KeyRound className="w-5 h-5" />
+              <span className="font-semibold text-base">Quick Demo Access</span>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="grid grid-cols-1 gap-2">
               <Button
                 type="button"
                 variant="outline"
                 size="sm"
-                className="w-full justify-start text-xs bg-slate-600/50 border-slate-500 hover:bg-slate-600 text-slate-200"
+                className="w-full justify-center text-sm bg-gradient-to-r from-green-600/20 to-green-700/20 border-green-500/40 hover:from-green-600/30 hover:to-green-700/30 text-green-100 font-medium transition-all hover:scale-[1.02]"
                 onClick={() => {
                   setEmail('manthan@gmail.com');
                   setPassword('Manthan123');
                 }}
               >
-                Driver: manthan@gmail.com
+                🚑 Driver Account
               </Button>
               <Button
                 type="button"
                 variant="outline"
                 size="sm"
-                className="w-full justify-start text-xs bg-slate-600/50 border-slate-500 hover:bg-slate-600 text-slate-200"
+                className="w-full justify-center text-sm bg-gradient-to-r from-blue-600/20 to-blue-700/20 border-blue-500/40 hover:from-blue-600/30 hover:to-blue-700/30 text-blue-100 font-medium transition-all hover:scale-[1.02]"
                 onClick={() => {
                   setEmail('puneet@gmail.com');
                   setPassword('Puneet123');
                 }}
               >
-                Hospital: puneet@gmail.com
+                🏥 Hospital Account
               </Button>
               <Button
                 type="button"
                 variant="outline"
                 size="sm"
-                className="w-full justify-start text-xs bg-slate-600/50 border-slate-500 hover:bg-slate-600 text-slate-200"
+                className="w-full justify-center text-sm bg-gradient-to-r from-purple-600/20 to-purple-700/20 border-purple-500/40 hover:from-purple-600/30 hover:to-purple-700/30 text-purple-100 font-medium transition-all hover:scale-[1.02]"
                 onClick={() => {
                   setEmail('hardik@gmail.com');
                   setPassword('Hardik123');
                 }}
               >
-                Admin: hardik@gmail.com
+                👨‍💼 Admin Account
               </Button>
             </div>
           </div>
