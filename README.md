@@ -3,12 +3,6 @@
 > ⏱ Every 1 minute of delay in emergency response reduces survival probability by **7-10%**.  
 > **Navira AI** minimizes delays by automating routing, traffic control, and hospital coordination in real time.
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 3b427c8 (fix: Update README to reflect project name change from MediRoute AI to Navira AI)
----
-
 ## 🧠 Overview
 
 **Navira AI** is a real-time, city-scale emergency mobility platform that coordinates:
@@ -24,12 +18,94 @@ to create **automated green corridors**, dynamically assign **optimal hospitals*
 ## 🚀 Real-World Impact
 
 | Impact | Benefit |
-|--------|---------|
+|--------|---------|  
 | ⏱ Reduced response time | 25-40% faster ambulance arrival |
 | 🏥 Prevents hospital overload | Smart ICU & ER load balancing |
 | 🚦 Clears traffic congestion | Automated green corridors |
 | ❤️ Saves critical minutes | Higher survival probability |
 | 🏙 Smart-city ready | Scalable city-wide deployment |
+
+---
+
+## 🛠 Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Frontend | React 18, TypeScript, Tailwind |
+| UI | shadcn/ui, Radix UI |
+| Maps | Leaflet, React-Leaflet |
+| Backend | Node.js, Supabase |
+| Database | PostgreSQL (Supabase) |
+| AI | Gemini API |
+| Deployment | Vercel |
+| Build Tool | Vite |
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+ and npm
+- Supabase account
+
+### Installation
+
+1. **Clone repository**
+   ```bash
+   git clone https://github.com/puneetkumargarg/navira-ai.git
+   cd navira-ai
+   ```
+
+2. **Install frontend dependencies**
+   ```bash
+   cd frontend
+   npm install
+   ```
+
+3. **Install backend dependencies**
+   ```bash
+   cd ../backend
+   npm install
+   ```
+
+4. **Environment Setup**
+   
+   Create `frontend/.env`:
+   ```env
+   VITE_SUPABASE_URL="https://your-project-id.supabase.co"
+   VITE_SUPABASE_ANON_KEY="your-anon-key"
+   ```
+   
+   Create `backend/.env`:
+   ```env
+   SUPABASE_URL="https://your-project-id.supabase.co"
+   SUPABASE_SERVICE_KEY="your-service-key"
+   PORT=3000
+   ```
+
+5. **Database Setup**
+   - Create a new Supabase project
+   - Run migrations from `backend/supabase/migrations/`
+   - Or use Supabase CLI:
+     ```bash
+     cd backend
+     supabase link --project-ref your-project-id
+     supabase db push
+     ```
+
+6. **Start Development**
+   ```bash
+   # Terminal 1 - Frontend
+   cd frontend
+   npm run dev
+   
+   # Terminal 2 - Backend
+   cd backend
+   npm start
+   ```
+
+   Frontend: http://localhost:8080
+   Backend: http://localhost:3000
 
 ---
 
@@ -220,6 +296,8 @@ Navira AI follows a centrally controlled, hospital‑approved emergency mobility
 
 ---
 
+---
+
 ## ⚡ Scalability
 
 - Multi-city deployment ready
@@ -235,7 +313,6 @@ Navira AI follows a centrally controlled, hospital‑approved emergency mobility
 ### Prerequisites
 - Node.js 18+ and npm
 - Supabase account
-- Vercel account
 
 ### Installation
 
@@ -245,32 +322,56 @@ Navira AI follows a centrally controlled, hospital‑approved emergency mobility
    cd navira-ai
    ```
 
-2. **Install dependencies**
+2. **Install frontend dependencies**
    ```bash
-   npm install --legacy-peer-deps
+   cd frontend
+   npm install
    ```
 
-3. **Environment Setup**
-   ✅ Create `.env.local` in root directory
+3. **Install backend dependencies**
+   ```bash
+   cd ../backend
+   npm install
+   ```
+
+4. **Environment Setup**
+   
+   Create `frontend/.env`:
    ```env
-   VITE_SUPABASE_PROJECT_ID="your-project-id"
-   VITE_SUPABASE_PUBLISHABLE_KEY="your-anon-key"
    VITE_SUPABASE_URL="https://your-project-id.supabase.co"
+   VITE_SUPABASE_ANON_KEY="your-anon-key"
+   ```
+   
+   Create `backend/.env`:
+   ```env
+   SUPABASE_URL="https://your-project-id.supabase.co"
+   SUPABASE_SERVICE_KEY="your-service-key"
+   PORT=3000
    ```
 
-4. **Database Setup**
+5. **Database Setup**
    - Create a new Supabase project
-   - Run the migrations in the `supabase/migrations/` folder
+   - Run migrations from `backend/supabase/migrations/`
    - Or use Supabase CLI:
      ```bash
+     cd backend
      supabase link --project-ref your-project-id
      supabase db push
      ```
 
-5. **Start Development Server**
+6. **Start Development**
    ```bash
+   # Terminal 1 - Frontend
+   cd frontend
    npm run dev
+   
+   # Terminal 2 - Backend
+   cd backend
+   npm start
    ```
+
+   Frontend: http://localhost:8080
+   Backend: http://localhost:3000
 
 ## 📱 User Roles
 
@@ -326,25 +427,82 @@ Navira AI follows a centrally controlled, hospital‑approved emergency mobility
 
 ### Available Scripts
 
+**Frontend:**
 ```bash
-npm run dev          # Start development server
+cd frontend
+npm run dev          # Start dev server (port 8080)
 npm run build        # Build for production
 npm run preview      # Preview production build
-npm run lint         # Run ESLint
 ```
 
-### Project Structure
+**Backend:**
+```bash
+cd backend
+npm start            # Start server (port 3000)
+npm run dev          # Start with nodemon
+```
+
+## 📚 Documentation
+
+For detailed information, see:
+- [System Architecture](docs/system-architecture.md)
+- [Emergency Workflow](docs/emergency-workflow.md)
+- [Admin Command Center](docs/ADMIN_COMMAND_CENTER.md)
+- [Admin Features Setup](docs/ADMIN_FEATURES_SETUP.md)
+
+---
+
+## 📁 Project Structure
 
 ```
-src/
+Navira-AI/
+├── frontend/          # React + TypeScript + Vite
+│   ├── src/
+│   │   ├── components/    # UI components
+│   │   ├── features/      # Feature modules
+│   │   ├── pages/         # Page components
+│   │   ├── hooks/         # Custom hooks
+│   │   ├── services/      # API services
+│   │   └── integrations/  # Supabase integration
+│   └── public/            # Static assets
+│
+├── backend/           # Node.js Backend
+│   ├── supabase/          # Database migrations
+│   ├── database/          # SQL schemas
+│   ├── scripts/           # Utility scripts
+│   └── config/            # Configuration files
+│
+└── docs/              # Documentation
+    ├── system-architecture.md
+    ├── emergency-workflow.md
+    └── ADMIN_COMMAND_CENTER.md
+```
+
+### Frontend Structure
+
+```
+frontend/src/
 ├── components/          # Reusable UI components
 │   ├── ui/             # shadcn/ui components
 │   └── ...             # Custom components
+├── features/           # Feature modules
+│   └── ambulance-dashboard/
 ├── hooks/              # Custom React hooks
 ├── pages/              # Page components
 ├── types/              # TypeScript type definitions
-├── integrations/       # External service integrations
+├── integrations/       # Supabase integration
+├── services/           # API services
 └── lib/                # Utility functions
+```
+
+### Backend Structure
+
+```
+backend/
+├── supabase/           # Database migrations
+├── database/           # SQL schemas
+├── scripts/            # Utility scripts
+└── config/             # Configuration files
 ```
 
 ## 🔐 Authentication
