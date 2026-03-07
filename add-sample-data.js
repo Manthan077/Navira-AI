@@ -8,11 +8,11 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 async function addDriversAndAmbulances() {
   // Sample drivers data
   const drivers = [
-    { email: 'driver1@mediroute.com', password: 'driver123', full_name: 'John Smith', role: 'ambulance_driver' },
-    { email: 'driver2@mediroute.com', password: 'driver123', full_name: 'Sarah Johnson', role: 'ambulance_driver' },
-    { email: 'driver3@mediroute.com', password: 'driver123', full_name: 'Mike Davis', role: 'ambulance_driver' },
-    { email: 'driver4@mediroute.com', password: 'driver123', full_name: 'Lisa Wilson', role: 'ambulance_driver' },
-    { email: 'driver5@mediroute.com', password: 'driver123', full_name: 'Tom Brown', role: 'ambulance_driver' }
+    { email: 'driver1@navira.com', password: 'driver123', full_name: 'John Smith', role: 'ambulance_driver' },
+    { email: 'driver2@navira.com', password: 'driver123', full_name: 'Sarah Johnson', role: 'ambulance_driver' },
+    { email: 'driver3@navira.com', password: 'driver123', full_name: 'Mike Davis', role: 'ambulance_driver' },
+    { email: 'driver4@navira.com', password: 'driver123', full_name: 'Lisa Wilson', role: 'ambulance_driver' },
+    { email: 'driver5@navira.com', password: 'driver123', full_name: 'Tom Brown', role: 'ambulance_driver' }
   ];
 
   // Sample ambulances data

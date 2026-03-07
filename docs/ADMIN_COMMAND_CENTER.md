@@ -2,7 +2,7 @@
 
 ## 🚀 Overview
 
-The **Admin Command Center** provides comprehensive city-level control over the entire MediRoute AI emergency response system. This implementation includes all requested features for complete administrative authority.
+The **Admin Command Center** provides comprehensive city-level control over the entire Navira AI emergency response system. This implementation includes all requested features for complete administrative authority.
 
 ## 🏗️ Architecture
 
