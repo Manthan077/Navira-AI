@@ -232,6 +232,25 @@ Navira AI follows a centrally controlled, hospital‑approved emergency mobility
 - Emergency token system
 - Live route recalculation
 - Hospital ETA synchronization
+- **🚦 Integrated Traffic Simulation** - Advanced traffic simulation with green corridor visualization
+
+---
+
+## 🎮 Traffic Simulation
+
+**Integrated traffic simulation module** for testing and demonstration.
+
+**Features:**
+- Real-time traffic flow visualization
+- OSRM-based route calculation
+- Green corridor activation
+- AI-powered ambulance and hospital selection
+- Performance metrics (time saved, efficiency)
+- Interactive Leaflet map
+
+**Access:** Click "🚦 Traffic Simulation" button in Ambulance Dashboard
+
+**Setup:** See [Simulation Integration Guide](SIMULATION_INTEGRATION.md)
 
 ---
 
