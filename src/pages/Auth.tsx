@@ -57,7 +57,7 @@ export default function Auth() {
       <div className="w-full max-w-md animate-fade-in">
         <div className="text-center mb-6 sm:mb-8 flex flex-col items-center">
           <Logo size="lg" showText={false} className="mb-3 sm:mb-4" />
-          <h1 className="text-xl sm:text-2xl font-bold text-white">MediRoute AI</h1>
+          <h1 className="text-xl sm:text-2xl font-bold text-white">Navira AI</h1>
           <p className="text-slate-400 mt-1 text-sm sm:text-base">Smart Ambulance Navigation System</p>
         </div>
 
